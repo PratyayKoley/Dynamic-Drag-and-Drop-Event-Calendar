@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+# Dynamic Event Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based dynamic event calendar application built with Vite, Tailwind CSS, and shadcn/ui components.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Monthly calendar view with navigation
+- Add, edit, and delete events
+- View events for a specific day
+- Filter events by keyword
+- Data persistence using localStorage
+- Drag and drop events between dates
+- Allow exporting events as JSON or CSV
+- Check for Clashing of Events
+- Light and dark mode support
 
-## Expanding the ESLint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Build for production: `npm run build`
 
-- Configure the top-level `parserOptions` property like this:
+## Deployment
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This project is deployed at: [https://dynamic-drag-and-drop-event-calendar-2vb3.vercel.app/]
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies Used
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui components
+- react-beautiful-dnd for drag and drop functionality
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Working
+
+- This is a single-page project where the calendar is displayed using custom-built code without using any library.
+- On the calendar, the current date will be displayed by default. You can add, update, or delete an event for a particular date by simply clicking on the date.
+- You can download the list of events as a JSON or CSV file using the buttons provided at the bottom, and the events can also be viewed directly.
+- If you wish to change the position of an event from one date to another, you can simply drag the event. If the event clashes with another, an alert dialog will appear.
+- Similarly, if you try to add an event on a date that clashes with a predefined event, the alert dialog will appear.
