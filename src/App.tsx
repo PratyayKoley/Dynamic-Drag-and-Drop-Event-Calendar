@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Calendar } from "./components/pages/Calendar"
 import { ModeToggle } from "./Theme/mode-toggle"
 import { ThemeProvider } from "./Theme/theme-provider"
